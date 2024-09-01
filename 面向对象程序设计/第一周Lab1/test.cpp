@@ -25,9 +25,24 @@ void TestNameSpace::TestExample(){
     
     const size_t teseCount=sizeof(testCases)/sizeof(testCases[0]);
     for(size_t i=0;i<teseCount;++i){
-        const TestCase & testcase=testCases[i];
+        TestCase & testcase=testCases[i];
         auto [expectedx_1,expectedx_2]=mathSpace::getAnswer(testcase.a,testcase.b,testcase.c);
         assert(expectedx_1==testcase.x_1);
         assert(expectedx_2==testcase.x_2);
+        auto [expectedxv_1,expectedxv_2]=mathSpace::getAnswerWithValue(testcase.a,testcase.b,testcase.c);
+        assert(expectedxv_1==testcase.x_1);
+        assert(expectedxv_2==testcase.x_2);
+        auto [expectedxp_1,expectedxp_2]=mathSpace::getAnswerWithPointer(&(testcase.a),&testcase.b,&testcase.c);
+        double expectedxpv_1=*expectedxp_1;
+        double expectedxpv_2=*expectedxp_2;
+        //cout<<expectedxpv_1<<"-->"<<expectedxpv_1<<endl;
+        //cout<<expectedx_1<<"-->"<<expectedxpv_1<<"-->"<<testcase.x_1<<*expectedxp_1<<endl;
+        assert(expectedxpv_1==testcase.x_1);
+        assert(expectedxpv_2==testcase.x_2);
     }
+    cout<<"----------"<<endl;
+    cout<<"引用传递测试通过"<<endl;
+    cout<<"值传递测试通过"<<endl;
+    cout<<"指针传递测试通过"<<endl;
+    cout<<"----------"<<endl;
 }

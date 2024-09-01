@@ -28,8 +28,21 @@ void solveYourQuesetion(){
     istringstream iss(line);
     double a,b,c;
     iss>>a>>b>>c;
+    cout<<"----------"<<endl;
+    cout<<"使用引用传递参数:"<<endl;
     auto [x_1,x_2]=mathSpace::getAnswer(a,b,c);
     printAnswer(x_1,x_2);
+    cout<<endl;
+    cout<<"使用值传递:"<<endl;
+    auto [xv_1,xv_2]=mathSpace::getAnswerWithValue(a,b,c);
+    printAnswer(xv_1,xv_2);
+    cout<<endl;
+    cout<<"使用指针传递:"<<endl;
+    auto [xp_1,xp_2]=mathSpace::getAnswerWithPointer(&a,&b,&c);
+    double xpv_1=*xp_1;
+    double xpv_2=*xp_2;
+    printAnswer(xpv_1,xpv_2);
+    cout<<"----------"<<endl;
 }
 
 
@@ -46,10 +59,8 @@ int main(){
             break;
         }
     }
-    cout<<endl;
     //下面是测试
     //有7组数据，使用了cassert库
     TestNameSpace::TestExample();
-    cout<<"测试通过"<<endl;
     return 0;
 }
