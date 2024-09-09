@@ -1,4 +1,4 @@
-// List_int.h		µ¥ÏòÁ´±í½áµãÊý¾Ý×éÖ¯ÐÎÊ½ÃèÊö
+// List_int.h		ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¯ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½
 #ifndef LIST_INT_H
 #define LIST_INT_H
 #include <iostream>
@@ -6,25 +6,25 @@ using namespace std;
 
 struct Node
 {
-	int data;			// Êý¾ÝÓò(ËäÈ»ÕâÀï½öÓÐÒ»¸öÊý¾Ý£¬µ«»¹ÊÇÓÃÊý¾ÝdatumµÄ¸´ÊýÐÎÊ½)
-	Node *next;			// Ö¸ÕëÓò
+	int data;			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½datumï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Ê½)
+	Node *next;			// Ö¸ï¿½ï¿½ï¿½ï¿½
 
-	//¹¹Ôìº¯Êý£¬ÀàËÆÓÚC++OOP
+	//ï¿½ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½C++OOP
 	Node(int val) : data(val),next(nullptr){}
 };
 
-// ÒÔÏÂÎª4¸öº¯ÊýµÄº¯ÊýÔ­ÐÍ£¨Æä¶¨ÒåÒÑÍê³É£¬¼ûList_int.cppÎÄ¼þ£©
+// ï¿½ï¿½ï¿½ï¿½Îª4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½Ô­ï¿½Í£ï¿½ï¿½ä¶¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½List_int.cppï¿½Ä¼ï¿½ï¿½ï¿½
 ostream& operator<<(ostream& out, const Node* head);
-Node* Locate(Node* head, int x, int& num, bool newsearch = false);	// ·µ»ØÕÒµ½µÄ½áµãµØÖ·£¬"·µ»Ø"¸Ã½áµãµÄÐòºÅnum
+Node* Locate(Node* head, int x, int& num, bool newsearch = false);	// ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½Ä½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½"ï¿½ï¿½ï¿½ï¿½"ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½num
 int Save(const char* filename, const Node* head);
 int Load(const char* filename, Node*& head);
 void Create(Node *&head,int n,int *arr);
 void ShowList(Node *head);
-void Insert(Node *&head,int x);
-void Append(Node *head,int x);
+Node * Insert(Node *&head,int x);
+Node * Append(Node *head,int x);
 void FreeList(Node * &head);
 int NumNodes(Node *head);
-// ÇëÔÚ´Ë²¹³ä6¸öº¯Êý£¨Create£¬NumNodes£¬ShowList£¬Insert£¬Append£¬FreeList£©µÄº¯ÊýÔ­ÐÍÉùÃ÷
+// ï¿½ï¿½ï¿½Ú´Ë²ï¿½ï¿½ï¿½6ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Createï¿½ï¿½NumNodesï¿½ï¿½ShowListï¿½ï¿½Insertï¿½ï¿½Appendï¿½ï¿½FreeListï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 #endif

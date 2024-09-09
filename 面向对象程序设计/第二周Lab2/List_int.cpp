@@ -121,7 +121,7 @@ void Init(Node *&head)					// 测试Create。利用连续存放的数组元素创建链表
 */
 void Create(Node *&head,int n,int *arr){
 	for(size_t i=0;i<n;i++){
-		Node *node=new Node(arr[i]);
+		Node *node=new Node(arr[n-i-1]);
 		(*node).next=head;
 		head=node ;
 	}
@@ -145,18 +145,20 @@ void ShowList(Node *head){
 	cout<<"NULL"<<endl;
 	}
 }
-void Insert(Node *&head,int x){
+Node* Insert(Node *&head,int x){
 	Node *node=new Node(x);
 	node->next=head;
 	head=node;
+	return head;
 }
 
-void Append(Node *head,int x){
+Node* Append(Node *head,int x){
 	while(head->next!=NULL){
 		head=head->next;
 	}
 	Node *node=new Node(x);
 	head->next=node;
+	return node;
 }
 void FreeList(Node * &head){
 	while(head!=NULL){
