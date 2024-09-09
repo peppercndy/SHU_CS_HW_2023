@@ -85,6 +85,7 @@ int main()
 		cout << "  5 ---- 数据写入文件(W)" << endl;
 		cout << "  6 ---- 读取数据文件(R)" << endl;
 		cout << "  7 ---- 释放所有结点(F)" << endl;
+		cout << "  8 ---- 输出结点个数(N)" << endl;
 		cout << "  0 ---- 退      出(ESC)" << endl;
 		cout << "==========================" << endl;
 		key = Choice("请选择", "01234567\x1bpPiIaAsSwWrRfF");
@@ -149,7 +150,16 @@ int main()
 			if (yn == 'y' || yn == 'Y') // 默认 No
 				FreeList(head);
 			break;
+		/*
+		case '8':
+		case 'n':
+		case 'N':
+			int number=NumNodes(head);
+			cout<<"此链表总共有 "<<number<<" 个结点"<<endl;
+			break;
+			*/
 		}
+		
 	}
 	if (head != NULL)
 	{

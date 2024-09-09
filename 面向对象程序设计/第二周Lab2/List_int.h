@@ -23,6 +23,7 @@ void ShowList(Node *head);
 void Insert(Node *&head,int x);
 void Append(Node *head,int x);
 void FreeList(Node * &head);
+int NumNodes(Node *head);
 // 请在此补充6个函数（Create，NumNodes，ShowList，Insert，Append，FreeList）的函数原型声明
 
 

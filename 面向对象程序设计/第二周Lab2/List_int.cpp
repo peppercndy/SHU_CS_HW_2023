@@ -165,3 +165,12 @@ void FreeList(Node * &head){
 		delete temp;
 	}
 }
+
+int NumNodes(Node *head){
+	int number=0;
+	while(head!=NULL){
+		number++;
+		head=head->next;
+	}
+	return number;
+}
